@@ -1,0 +1,59 @@
+/**
+ * Created by emmahamel on 12/13/16.
+ */
+//
+
+//storing the user defined variables
+var samplearray = [];
+
+//getting user input
+for (i = 0; i++; i > 4) {
+    var sample = prompt("What do you what to talk about?");
+    samplearray.push(sample);
+}
+
+//every "activity", or user defined input, has a designated number
+//this will help the computer decide what to ask you
+var num1 = 0;
+var num2 = 0;
+var num3 = 0;
+
+//calculating what to ask you
+var sam1 = random(0,samplearray.length) + num1;
+var sam2 = random(0,samplearray.length) + num2;
+var sam3 = random(0,samplearray.length) + num3;
+
+//the test clause
+for (i = 0; i++; i > 10) {
+    var test = prompt("What do you want to talk about?  Talk about something you previously mention");
+    //Every time the user gives an activity,
+    // the computer will take note and be more likely to ask you about it
+    if (test === samplearray[0]) {
+        num1++;
+    }
+
+    if (test === samplearray[1]) {
+        num2++;
+    }
+
+    if (test === samplearray[2]) {
+        num3++;
+    }
+}
+
+//If the user wanted to talk about the first activity the most,
+//num1, its corresponding number, would be highest and thus this if statement would run
+if (sam1 > sam2 && sam1 > sam3){
+        var question1 = prompt("Would you like to talk about " + samplearray[0] + "?");
+
+        if(question1 === "Yes" || "yes") {
+            println("Success!");
+            num1++
+        } else if (question1 === "No" || "no"){
+            println("Try Again!");
+            num1--;
+
+        } else {
+            println("Invalid entry");
+        }
+}
