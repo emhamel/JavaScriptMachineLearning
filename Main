@@ -44,16 +44,50 @@ for (i = 0; i++; i > 10) {
 //If the user wanted to talk about the first activity the most,
 //num1, its corresponding number, would be highest and thus this if statement would run
 if (sam1 > sam2 && sam1 > sam3){
-        var question1 = prompt("Would you like to talk about " + samplearray[0] + "?");
+    var question1 = prompt("Would you like to talk about " + samplearray[0] + "?");
 
-        if(question1 === "Yes" || "yes") {
+    if(question1 === "Yes" || "yes") {
+        println("Success!");
+        num1++
+
+    } else if (question1 === "No" || "no"){
+        println("Try Again!");
+        num1--;
+
+    } else {
+        println("Invalid entry");
+    }
+}
+
+//Same implimentation as num1, just with num2
+if (sam2 > sam1 && sam2 > sam3){
+    var question2 = prompt("Would you like to talk about " + samplearray[1] + "?");
+
+    if(question2 === "Yes" || "yes") {
             println("Success!");
-            num1++
-        } else if (question1 === "No" || "no"){
-            println("Try Again!");
-            num1--;
+            num2++;
 
-        } else {
-            println("Invalid entry");
-        }
+    } else if (question2 === "No" || "no"){
+        println("Try Again!");
+        num2--;
+
+    } else {
+        println("Invalid Entry");
+    }
+}
+
+if (sam3 > sam1 && sam3 > sam2){
+    var question3 = prompt("Would you like to talk about " + samplearray[2] + "?");
+
+    if(question3 === "Yes" || "yes") {
+        println("Success!");
+        num3++;
+
+    } else if (question3 === "No" || "no"){
+        println("Try Again!");
+        num3--;
+
+    } else {
+        println("Invalid Entry");
+    }
 }
